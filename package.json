@@ -1,0 +1,19 @@
+{
+  "name": "torrent-experiments",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node src/index.js",
+    "format": "npx prettier --write src"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "webtorrent-hybrid": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
+  }
+}
