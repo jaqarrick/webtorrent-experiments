@@ -5,14 +5,14 @@ export class TorrentController {
   constructor(webtorrentClient) {
     this.webtorrentClient = webtorrentClient;
     this.post = this.post.bind(this);
-    this.listTorrents = this.listTorrents.bind(this);
     this.webtorrentClient.on('error', (err) => {
       console.error(err);
     });
 
     const sleep = 1000;
-    this.interval = setInterval(listTorrents, sleep);
     this.torrents = [];
+    this.interval = setInterval(() => listTorrents(this.torrents), sleep);
+    
   }
 
   post(req, res) {
